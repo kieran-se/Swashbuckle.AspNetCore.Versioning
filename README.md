@@ -4,7 +4,7 @@ Swagger versioning for documenting APIs built on ASP.NET Core
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use [NUGET](https://www.nuget.org/) to install Swashbuckle.AspNetCore.Versioning.
 
 ```bash
 Install-Package Swashbuckle.AspNetCore.Versioning
