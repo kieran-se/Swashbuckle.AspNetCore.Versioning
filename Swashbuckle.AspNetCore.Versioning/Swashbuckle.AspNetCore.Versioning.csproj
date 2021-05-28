@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Swashbuckle.AspNetCore.Versioning</AssemblyName>
+    <RootNamespace>Swashbuckle.AspNetCore.Versioning</RootNamespace>
+    <Company>Speckled Egg</Company>
+    <Authors>Speckled Egg</Authors>
+    <PackageTags>swagger, version, versioning, documentation, discovery, help, webapi, aspnet, aspnetcore</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>MIT</Copyright>
+    <Description>Swagger versioning for documenting APIs built on ASP.NET Core</Description>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/kieran-se/Swashbuckle.AspNetCore.Versioning</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/kieran-se/Swashbuckle.AspNetCore.Versioning</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
