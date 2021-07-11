@@ -42,7 +42,7 @@ namespace Swashbuckle.AspNetCore.Versioning
             options.IgnoreObsoleteProperties();
 
             AddSwaggerDocumentForEachDiscoveredApiVersion(options);
-            //SetCommentsPathForSwaggerJsonAndUi(options);
+            SetCommentsPathForSwaggerJsonAndUi(options);
         }
 
         private void AddSwaggerDocumentForEachDiscoveredApiVersion(SwaggerGenOptions options)
@@ -62,9 +62,12 @@ namespace Swashbuckle.AspNetCore.Versioning
 
         private static void SetCommentsPathForSwaggerJsonAndUi(SwaggerGenOptions options)
         {
-            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            options.IncludeXmlComments(xmlPath);
+            var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
+
+            if (File.Exists(xmlFile)) {
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+            }
         }
     }
 }
