@@ -14,7 +14,6 @@ namespace Swashbuckle.AspNetCore.Versioning
         public static void UseSwaggerDocuments(this IApplicationBuilder app)
         {
             app.UseSwagger();
-
             app.UseSwaggerUI();
         }
     }

@@ -13,8 +13,9 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryUrl>https://github.com/kieran-se/Swashbuckle.AspNetCore.Versioning</RepositoryUrl>
     <PackageProjectUrl>https://github.com/kieran-se/Swashbuckle.AspNetCore.Versioning</PackageProjectUrl>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
