@@ -10,7 +10,76 @@ Use [NUGET](https://www.nuget.org/) to install Swashbuckle.AspNetCore.Versioning
 Install-Package Swashbuckle.AspNetCore.Versioning
 ```
 
-## Usage
+## Usage .NET 6
+
+Add to Program.cs
+
+```cs
+...
+
+builder.Services.Configure<SwaggerConfiguration>(builder.Configuration.GetSection(nameof(SwaggerConfiguration)));
+
+builder.Services.AddApiVersionWithExplorer()
+    .AddSwaggerOptions()
+    .AddSwaggerGen();
+
+...
+
+app.UseSwaggerDocuments();
+
+...
+```
+
+Add to appsettings.json
+
+```json
+{
+  ...
+  "SwaggerConfiguration": {
+    "RoutePrefix": "",
+    "Info": {
+      "Title": "<<API TITLE>>",
+      "Description": "<<API DESCRIPTION>>",
+      "TermsOfService": "",
+      "Contact": {
+        "Name": "<<CONTACT NAME>>",
+        "Email": "<<CONTACT EMAIL>>",
+        "Url": "<<CONTACT URL>>"
+      }
+    }
+  }
+  ...
+}
+
+```
+
+On the controller add the versioning attribute or for cross version use neutral.
+
+Will show on V1 and v2:
+
+```cs
+[ApiVersion("1.0")]
+[ApiVersion("2.0")]
+[Route("v{version:apiVersion}/[controller]")]
+[ApiController]
+public class AuthorizationController : BaseController
+{
+    ...
+}
+```
+Will show on all versions:
+
+```cs
+[ApiVersionNeutral]
+[Route("v{version:apiVersion}/[controller]")]
+[ApiController]
+public class AuthorizationController : BaseController
+{
+    ...
+}
+```
+
+## Usage .NET <6
 
 Add to Startup.cs
 
